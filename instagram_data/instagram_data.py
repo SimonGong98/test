@@ -48,3 +48,87 @@ first_post.click()
 
 WebDriverWait(driver,timeout=5).until(EC.presence_of_element_located((By.CSS_SELECTOR, \
 'body > div._2dDPU.QPGbb.CkGkG > div.EfHg9 > div > div > div.l8mY4 > button')))
+
+
+seq = 0
+start = time.time()
+
+while True:
+    if driver.find_element_by_css_selector('body > div._2dDPU.QPGbb.CkGkG > div.EfHg9 > div > div > div.l8mY4 > button'):
+
+    # id
+        try:
+            info_id=driver.find_element_by_css_selector("div.e1e1d").text
+            insta_dict['id'].append(info_id)
+        except:
+            info_id = driver.find_element_by_css_selector('div.C4VMK').text.split()[0]
+            insta_dict['id'].append(info_id)
+
+
+        # time
+        time_raw = driver.find_element_by_css_selector('time')
+        time_info = pd.to_datetime(time_raw.get_attribute('datetime')).normalize()
+        insta_dict['date'].append(time_info)
+
+        # like
+        try:
+            driver.find_element_by_css_selector('a.zV_Nj')
+            like = driver.find_element_by_css_selector('a.zV_Nj').text
+            like=''.join([x for x in like.split()[1] if '개' not in x])
+            insta_dict['like'].append(like)
+
+        except:
+            insta_dict['like'].append('영상')
+
+
+
+        #text
+        try:
+            WebDriverWait(driver,timeout=5).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.C4VMK')))
+            #driver.find_element_by_css_selector('div.C4VMK')
+            raw_info = driver.find_element_by_css_selector('div.C4VMK').text.split()
+            text = []
+            for i in range(len(raw_info)):
+                if i == 0:
+                    pass
+                else:
+                    if '#' in raw_info[i]:
+                        pass
+                    else:
+                        text.append(raw_info[i])
+            clean_text = ' '.join(text)
+            insta_dict['text'].append(clean_text)
+        except:
+            pass
+
+        #HashTag
+        raw_tags = driver.find_elements_by_css_selector('a.xil3i')
+        hash_tag = []
+        for i in range(len(raw_tags)):
+            if raw_tags[i].text == '':
+                pass
+            else:
+                hash_tag.append(raw_tags[i].text)
+
+        insta_dict['hashtag'].append(hash_tag)
+
+        seq += 1
+
+        driver.find_element_by_css_selector(\
+        "body > div._2dDPU.QPGbb.CkGkG > div.EfHg9 > div > div > div.l8mY4 > button").send_keys(Keys.ENTER)
+
+        print('{}번째 수집'.format(seq), time.time() - start, sep = '\t')
+
+        WebDriverWait(driver,timeout=5).until(EC.presence_of_element_located((By.CSS_SELECTOR,'div.e1e1d')))
+
+        if seq == 500:
+            print("수집 종료")
+            break
+    else:
+        break
+
+"""
+Reference:
+BK_Paul, https://data-marketing-bk.tistory.com/10?category=897751
+WorkingWithPython, https://workingwithpython.com/selenium-waits/
+"""
