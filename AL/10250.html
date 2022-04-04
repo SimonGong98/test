@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Mab / A.L. / 10250</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="time">
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/javascript">
+          var today = new Date();
+          var year = today.getFullYear();
+          var month = ('0' + (today.getMonth() + 1)).slice(-2);
+          var day = ('0' + today.getDate()).slice(-2);
+          var dateString = year + '.' +month + '.' + day;
+          document.write(dateString);
+        </script>
+      </div>
+      <div class="header">
+        <div id='mab'>
+          <a href="../main.html" id='mab1'>M A B</a>
+        </div>
+      </div>
+      <div class="nav"><div id='nav1'>mab</div></div>
+    	<div class="sidebar-a">
+        <div class='side-a'>
+          <div id="side-title">List</div>
+          <li class='side-aa'><a class='font' href="ML.html">M.L.</a></li>
+          <li class='side-aa'><a class='font' href="../AL.html">A.L.</a></li>
+          <li class='side-aa'><a class='font' href="../ME.html">M.E.</a></li>
+          <li class='side-aa'><a class='font' href="blog4.html">me</a></li>
+        </div>
+      </div>
+    	<div class="main-content">
+        <div class="my-box">
+          <img src="../img/AL/10250prb-1.png" class="fit"><br>
+          <img src="../img/AL/10250prb-2.png" class="fit">
+          <div class="solution">
+            <div class="solu_inner">
+              <p style="font-size:large;">풀이</p>
+              <pre> <code>
+t = int(input())
+
+for i in range(t):
+    h, w, n = map(int, input().split())
+    num = n//h + 1
+    floor = n % h
+    if n % h == 0:
+        num = n//h
+        floor = h
+    print(f'{floor*100+num}')
+              </code> </pre>
+              <p>본 문제의 패턴은 다음과 같다.</p><br>
+              <p>첫 번째 열을 1층 부터 H층 까지 채우고, 두 번째 열로 넘어가서 반복한다.</p>
+              <p>호수는 $n/h$의 몫에 1을 더한 값이고, 층수는 나머지 값이다.</p>
+              <p>주의할 점은 호수가 1일때, 층수는 h값과 동일하고 호수는 $n/h$ 이다.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    	<div class="footer">
+        <span>
+          Portfolio for SimonGong | Email: ksmdooly@ajou.ac.kr | Tel: 010-4736-5102
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

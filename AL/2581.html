@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Mab / A.L. / 2581</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="time">
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+        </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/javascript">
+          var today = new Date();
+          var year = today.getFullYear();
+          var month = ('0' + (today.getMonth() + 1)).slice(-2);
+          var day = ('0' + today.getDate()).slice(-2);
+          var dateString = year + '.' +month + '.' + day;
+          document.write(dateString);
+        </script>
+      </div>
+      <div class="header">
+        <div id='mab'>
+          <a href="../main.html" id='mab1'>M A B</a>
+        </div>
+      </div>
+      <div class="nav"><div id='nav1'>mab</div></div>
+    	<div class="sidebar-a">
+        <div class='side-a'>
+          <div id="side-title">List</div>
+          <li class='side-aa'><a class='font' href="ML.html">M.L.</a></li>
+          <li class='side-aa'><a class='font' href="../AL.html">A.L.</a></li>
+          <li class='side-aa'><a class='font' href="../ME.html">M.E.</a></li>
+          <li class='side-aa'><a class='font' href="blog4.html">me</a></li>
+        </div>
+      </div>
+    	<div class="main-content">
+        <div class="my-box">
+          <img src="../img/AL/2581prb.png" class="fit">
+          <div class="solution">
+            <div class="solu_inner">
+              <p style="font-size:large;">풀이</p>
+              <div class="code">
+                <pre><code>
+m=int(input()); n=int(input())
+ans=[]
+for i in [x for x in range(m,n+1)]:
+    b=0
+    if i>1:
+        for j in range(2,i):
+            if i%j==0:
+                b+=1
+        if b==0:
+            ans.append(i)
+if len(ans)>0:
+    print(sum(ans))
+    print(min(ans))
+else:
+    print(-1)
+                </code></pre>
+              </div>
+              <p>m 부터 n까지의 </p>
+              <p>모든 수가 0으로 나눠떨어지지 않으면 소수이다.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    	<div class="footer">
+        <span>
+          Portfolio for SimonGong | Email: ksmdooly@ajou.ac.kr | Tel: 010-4736-5102
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

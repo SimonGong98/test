@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Mab / A.L. / 2869</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="time">
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/javascript">
+          var today = new Date();
+          var year = today.getFullYear();
+          var month = ('0' + (today.getMonth() + 1)).slice(-2);
+          var day = ('0' + today.getDate()).slice(-2);
+          var dateString = year + '.' +month + '.' + day;
+          document.write(dateString);
+        </script>
+      </div>
+      <div class="header">
+        <div id='mab'>
+          <a href="../main.html" id='mab1'>M A B</a>
+        </div>
+      </div>
+      <div class="nav"><div id='nav1'>mab</div></div>
+    	<div class="sidebar-a">
+        <div class='side-a'>
+          <div id="side-title">List</div>
+          <li class='side-aa'><a class='font' href="ML.html">M.L.</a></li>
+          <li class='side-aa'><a class='font' href="../AL.html">A.L.</a></li>
+          <li class='side-aa'><a class='font' href="../ME.html">M.E.</a></li>
+          <li class='side-aa'><a class='font' href="blog4.html">me</a></li>
+        </div>
+      </div>
+    	<div class="main-content">
+        <div class="my-box">
+          <img src="../img/AL/2869prb.png" class="fit">
+          <div class="solution">
+            <div class="solu_inner">
+              <p style="font-size:large;">풀이</p>
+              <pre> <code>
+a,b,v=map(int, input().split())
+ans = (v-b)/(a-b)
+print(int(ans) if ans%int(ans)==0 else int(ans)+1)
+              </code> </pre>
+              <p>이 문제의 시간제한은 0.15초이다.</p>
+              <p>따라서 단순 while문 노가다(?)는 안되고,</p>
+              <p>패턴을 찾아 계산을 통해 한번에 해결해야 한다.</p><br>
+              <p>패턴은 다음과 같다.</p>
+              <p>낮에 올라간 횟수가 밤에 떨어진 횟수보다 1회 더 많다.</p>
+              <p>a, b, v에 대한 정답이 X인 방정식은</p>
+              <p>$AX-B(X-1)=V$</p>
+              <p>$X=(V-B)/(A-B)$ 이다.</p>
+              <p>이를 대입하여 간단하게 풀 수 있다.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    	<div class="footer">
+        <span>
+          Portfolio for SimonGong | Email: ksmdooly@ajou.ac.kr | Tel: 010-4736-5102
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

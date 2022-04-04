@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>grid</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-areas:
+
+          "header header header"
+      		"   a    main    b   "
+      		"   .     .      .   "
+      		"footer footer footer";
+
+        grid-template-columns: 0.6fr 2fr 0.6fr;
+        grid-template-rows: 150px 500px 30px 70px;
+      }
+      .header { grid-area: header; border:1px solid; padding:10px; }
+      .sidebar-a { grid-area: a; border:1px solid; padding:10px; }
+      .main-content { grid-area: main; border:1px solid; padding:10px; }
+      .sidebar-b { grid-area: b; border:1px solid; padding:10px; }
+      .footer { grid-area: footer; border:1px solid; padding:10px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"></div>
+    	<div class="sidebar-a"></div>
+    	<div class="main-content"></div>
+    	<div class="sidebar-b"></div>
+    	<div class="footer"></div>
+    </div>
+  </body>
+</html>
