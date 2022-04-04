@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>TestMab</title>
+    <link rel="stylesheet" type="text/css" href="TestMab.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="time">
+        <script type="text/javascript">
+          var today = new Date();
+          var year = today.getFullYear();
+          var month = ('0' + (today.getMonth() + 1)).slice(-2);
+          var day = ('0' + today.getDate()).slice(-2);
+          var dateString = year + '.' +month + '.' + day;
+          document.write(dateString);
+        </script>
+      </div>
+      <div class="header"><div id='mab'>M A B</div></div>
+      <div class="nav"><div id='nav1'>mab</div></div>
+    	<div class="sidebar-a">
+        <div class='side-a'>
+          <div id="side-title">List</div>
+          <li class='side-aa'><a class='font' href="#blog1">ML</a></li>
+          <li class='side-aa'><a class='font' href="#blog2">JS</a></li>
+          <li class='side-aa'><a class='font' href="#blog3">Major</a></li>
+          <li class='side-aa'><a class='font' href="#blog4">me</a></li>
+        </div>
+      </div>
+    	<div class="main-content">
+        <div class="my-box">
+          <p>Hi, this is Simon.</p>
+          <p>My major is Mechanical engineering.</p>
+          <p>Here is my portfolio blog.</p>
+          <p>For your information,</p>
+          <p>you could contact me at the email below.</p>
+          <p>Thank you for coming.</p>
+        </div>
+        <div class="myimg">
+          <img src="/Users/ksjdo/공석민_증명사진.jpg" alt="">
+        </div>
+      </div>
+    	<div class="footer">
+        <span>
+          Portfolio for SimonGong | Email: ksmdooly@ajou.ac.kr
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

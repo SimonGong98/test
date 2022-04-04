@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Mab / M.E.</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="time">
+        <script type="text/javascript">
+          var today = new Date();
+          var year = today.getFullYear();
+          var month = ('0' + (today.getMonth() + 1)).slice(-2);
+          var day = ('0' + today.getDate()).slice(-2);
+          var dateString = year + '.' +month + '.' + day;
+          document.write(dateString);
+        </script>
+      </div>
+      <div class="header">
+        <div id='mab'>
+          <a href="main.html" id='mab1'>M A B</a>
+        </div>
+      </div>
+      <div class="nav"><div id='nav1'>mab</div></div>
+    	<div class="sidebar-a">
+        <div class='side-a'>
+          <div id="side-title">List</div>
+          <li class='side-aa'><a class='font' href="../ML.html">M.L.</a></li>
+          <li class='side-aa'><a class='font' href="../AL.html">A.L.</a></li>
+          <li class='side-aa'><a class='font' href="../ME.html">M.E.</a></li>
+          <li class='side-aa'><a class='font' href="blog4.html">me</a></li>
+        </div>
+      </div>
+    	<div class="main-content">
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+        </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <div class="my-box">
+          <div class="algo_outer">
+            <a class="algo" href="#engineering_mathmatics">
+              <div class="algo_inner">engineering mathmatics</div>
+            </a>
+          </div>
+          <div class="algo_outer">
+            <a class="algo" href="#linear_algebra">
+              <div class="algo_inner">linear algebra</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    	<div class="footer">
+        <span>
+          Portfolio for SimonGong | Email: ksmdooly@ajou.ac.kr | Tel: 010-4736-5102
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
